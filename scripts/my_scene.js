@@ -9,11 +9,15 @@ class MyScene extends Phaser.Scene {
         this.load.image('background', 'assets/background.png');
         this.load.image('taro', 'assets/taro.png');
         this.load.image('hanako', 'assets/hanako.png');
+        this.load.image('apple', 'assets/apple.png');
+        this.load.image('orange', 'assets/orange.png');
     }
 
     create() {
              // 単体画像をシーンに追加(X座標,Y座標,画像名)
             this.add.image(400, 300, 'background');
+            this.add.image(150, 300, 'apple');
+            this.add.image(250, 300, 'orange');
             const taro = this.physics.add.sprite(500, 350, 'taro')
             const hanako = this.physics.add.sprite(500, 350, 'hanako')
             this.taro = taro

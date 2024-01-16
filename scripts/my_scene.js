@@ -10,10 +10,10 @@ class MainScene extends Phaser.Scene {
     // シーンの事前読み込み処理
     preload() {
          // 画像の読み込み(使用する時の名前, パス)
-        this.load.image('back', 'assets/background.png');
+        this.load.image('back', 'assets/back.png');
 
-        this.load.image('TARO', 'assets/taro.png');
-        this.load.image('HANAKO', 'assets/hanako.png');
+        this.load.image('TARO', 'assets/TARO.png');
+        this.load.image('HANAKO', 'assets/HANAKO.png');
         this.load.image('APPLE', 'assets/apple.png');
         this.load.image('orange', 'assets/orange.png');
 
@@ -31,6 +31,7 @@ class MainScene extends Phaser.Scene {
         this.TARO = TARO
 
         this.HANAKO = HANAKO
+
         let fulte = this.physics.add.staticGroup();
         for (let index = 0; index < 5; index++) {
             let  randx1 = Phaser.Math.Between(25, 775) ; 
@@ -43,12 +44,12 @@ class MainScene extends Phaser.Scene {
         this.physics.add.overlap(TARO, fulte, collectCoin, null, this);
         function collectCoin(p,coin){
             this.physics.pause();
-            
+            this.add.text(D_WIDTH/3,D_HEIGHT*1/3, 'Gameovera', { fontSize: '32px', fill: '#FFF' });
         }
         this.physics.add.overlap(HANAKO, fulte, collectCoin, null, this);
         function collectCoin(p,coin){
             this.physics.pause();
-           
+            this.add.text(D_WIDTH/3,D_HEIGHT*1/3, 'Gameovera', { fontSize: '32px', fill: '#FFF' });
             
         }
 
@@ -108,4 +109,6 @@ class MainScene extends Phaser.Scene {
 
 
     }
+
     }
+

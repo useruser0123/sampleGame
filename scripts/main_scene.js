@@ -78,8 +78,6 @@ class MainScene extends Phaser.Scene {
             this.TARO.setVelocityY(40);// 下方向の速度を設定
             this.HANAKO.setVelocityY(-40);// 下方向の速度を設定
 
-       
-
         }else if(cursors.left.isDown){
 
             console.log("Left");
@@ -87,27 +85,24 @@ class MainScene extends Phaser.Scene {
             this.TARO.setVelocityX(-40);// 左方向の速度を設定
             this.HANAKO.setVelocityX(40);// 左方向の速度を設定
 
-
         }else if(cursors.right.isDown){
 
             console.log("Right!!");
 
             this.TARO.setVelocityX(40);// 右方向の速度を設定
             this.HANAKO.setVelocityX(-40);// 右方向の速度を設定
-
-
-            
         }else{
-
             this.TARO.setVelocityX(0);// 横方向の速度を0
             this.HANAKO.setVelocityX(0);// 横方向の速度を0
-
             this.TARO.setVelocityY(0);// 縦方向の速度を0
             this.HANAKO.setVelocityY(0);// 縦方向の速度を0
 
         }
 
-
+        // フルーツを１０ことったらゲームを止める
+        if(this.count >= 10){
+            
+        }
     }
 
     }
